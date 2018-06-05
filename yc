@@ -1,0 +1,14 @@
+# You can to modify to your own workspace. 
+WORKSPACE=`pwd`
+TEST_WAV_DIR=$WORKSPACE"/test"
+TRAIN_WAV_DIR=$WORKSPACE"/melo"
+echo $TEST_WAV_DIR
+# Extract features
+python prepare_data.py extract_features --wav_dir=$TEST_WAV_DIR --out_dir=$WORKSPACE"/features/logmel/testing" --recompute=True
+python prepare_data.py extract_features --wav_dir=$TRAIN_WAV_DIR --out_dir=$WORKSPACE"/features/logmel/training" --recompute=True
+#python prepare_data.py extract_features --wav_dir=$EVALUATION_WAV_DIR --out_dir=$WORKSPACE"/features/logmel/evaluation" --recompute=True
+
+# Pack features
+python prepare_data.py pack_features --fe_dir=$WORKSPACE"/features/logmel/testing" --csv_path="meta_data/test.csv" --out_path=$WORKSPACE"/packed_features/logmel/testing.h5"
+python prepare_data.py pack_features --fe_dir=$WORKSPACE"/features/logmel/training" --csv_path="meta_data/weak.csv" --out_path=$WORKSPACE"/packed_features/logmel/training.h5"
+

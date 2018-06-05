@@ -1,0 +1,24 @@
+
+
+
+# --------- Event wise evaluation ---------
+		Speech	Dog	Cat	Alarm_	Dishes	Frying	Blende	Runnin	Vacuum	Electr
+thres:     	0.3	0.3	0.3	0.3	0.3	0.3	0.3	0.3	0.3	0.3
+tp:        	0	176	0	60	0	0	0	0	0	0
+fn:        	66	95	0	0	0	240	0	82	240	122
+fp:        	0	378	0	1122	0	0	0	0	0	0
+tn:        	1614	1031	1680	498	1680	1440	1680	1598	1440	1558
+precision: 	0.000	0.318	0.000	0.051	0.000	0.000	0.000	0.000	0.000	0.000
+recall:    	0.000	0.649	0.000	1.000	0.000	0.000	0.000	0.000	0.000	0.000
+f_value:   	0.000	0.427	0.000	0.097	0.000	0.000	0.000	0.000	0.000	0.000
+
+# --------- Total evaluation (Mix all events together) ---------
+total tp:      	236
+total fn:      	845
+total fp:      	1500
+total tn:      	14219
+
+total precision: 	0.136
+total recall:    	0.218
+total f_value:   	0.168
+total error_rate:	0.524
