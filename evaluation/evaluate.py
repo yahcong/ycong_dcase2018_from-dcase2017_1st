@@ -104,11 +104,13 @@ class AudioTaggingEvaluate(object):
         # element-wise stat
         stat['event_wise'] = {}
         
-        #因为测试时训练数据原因，导致训练数据标签不足，这里修改gt_mat
+        #因为测试时训练数据原因，导致训练数据标签不足，这里手动伪造，修改gt_mat
+		"""
         gt_mat[1,8]=1
         gt_mat[2,2]=1		
         gt_mat[2,4]=1
         gt_mat[3,6]=1
+		"""
         print('gt_mat:'+str(gt_mat))
         for k in range(len(self.lbs)):
             #print('k:'+str(k))	
